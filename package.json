@@ -1,0 +1,5 @@
+{
+  "name": "saml-identity-provider",
+  "private": true,
+  "dependencies": {}
+}
