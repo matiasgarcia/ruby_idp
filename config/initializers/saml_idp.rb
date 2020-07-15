@@ -91,13 +91,10 @@ SamlIdp.configure do |config|
   # config.technical_contact.email_address = "example@example.com"
 
   service_providers = {
-    "some-issuer-url.com/saml" => {
-      fingerprint: "9E:65:2E:03:06:8D:80:F2:86:C7:6C:77:A1:D9:14:97:0A:4D:F4:4D",
-      metadata_url: "http://some-issuer-url.com/saml/metadata",
-
-      # We now validate AssertionConsumerServiceURL will match the MetadataURL set above.
-      # *If* it's not going to match your Metadata URL's Host, then set this so we can validate the host using this list
-      response_hosts: ["foo.some-issuer-url.com"]
+    "http://localhost:3000/saml/metadata" => {
+      fingerprint: SamlIdp::Default::FINGERPRINT,
+      metadata_url: "http://localhost:3000/saml/metadata",
+      response_hosts: ["localhost"]
     },
   }
 
