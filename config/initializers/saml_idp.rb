@@ -90,7 +90,7 @@ SamlIdp.configure do |config|
   # config.technical_contact.email_address = "example@example.com"
 
   service_providers = {
-    "http://localhost:3000/saml/metadata" => {
+    "http://localhost:3000" => {
       fingerprint: SamlIdp::Default::FINGERPRINT,
       metadata_url: "http://localhost:3000/saml/metadata",
       response_hosts: ["localhost"]
