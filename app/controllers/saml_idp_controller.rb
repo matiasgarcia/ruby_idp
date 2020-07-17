@@ -7,6 +7,10 @@ class SamlIdpController < SamlIdp::IdpController
     end
 
     attr_reader :email, :password, :id
+
+    def persistent
+      id
+    end
   end
 
   def idp_authenticate(email, password)

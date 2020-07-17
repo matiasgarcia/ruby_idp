@@ -7,15 +7,35 @@ SamlIdp.configure do |config|
 -----END CERTIFICATE-----
   CERT
 
+  config.attributes = {
+    "emailAddress" => {
+      "name" => 'urn:oasis:names:tc:SAML:2.0:nameid-format:emailAddress',                                                # required (ex "urn:oid:1.3.6.1.4.1.5923.1.1.1.1")
+      "getter" => ->(principal) {                                         # not required
+        principal.email
+      },
+    },
+    "firstName" => {
+      "name" => 'urn:oasis:names:tc:SAML:2.0:nameid-format:firstName',
+      "getter" => ->(principal) { 'John' }
+    },
+    "lastName" => {
+      "name" => 'urn:oasis:names:tc:SAML:2.0:nameid-format:lastName',
+      "getter" => ->(principal) { 'Doe' }
+    },
+    "persistent" => {
+      "name" => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',
+      "getter" => ->(principal) { principal.id }
+    },
+    "transient" => {
+      "name" => 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient',
+      "getter" => ->(principal) { principal.id }
+    }
+  }
+
   config.secret_key = SamlIdp::Default::SECRET_KEY
 
   config.password = "secret_key_password"
   config.algorithm = :sha256
-  config.name_id.formats = {
-      email_address: -> (principal) { principal.email },
-      transient: -> (principal) { principal.id },
-      persistent: -> (p) { p.id },
-    }
 
   service_providers = {
     "http://localhost:3000" => {
