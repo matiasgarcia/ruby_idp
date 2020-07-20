@@ -109,6 +109,8 @@
     <orderEntry type="library" scope="PROVIDED" name="web-console (v3.7.0, RVM: ruby-2.5.7 [saml-identity-provider]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.3, RVM: ruby-2.5.7 [saml-identity-provider]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, RVM: ruby-2.5.7 [saml-identity-provider]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="xmlenc (v0.7.1, RVM: ruby-2.5.7 [saml-identity-provider]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="xmlmapper (v0.7.3, RVM: ruby-2.5.7 [saml-identity-provider]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, RVM: ruby-2.5.7 [saml-identity-provider]) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
